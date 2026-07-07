@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Alejandro Palomar — Fundador de Capitalista Rebelde. Soberanía financiera, crypto, Web3 e inversión internacional.">
+<meta property="og:title" content="Alejandro Palomar · Capitalista Rebelde">
+<meta property="og:description" content="Educar, invertir e inspirar. Soberanía financiera real.">
+<title>Alejandro Palomar · Capitalista Rebelde</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#C4962A;
+  --gold2:#E8C96A;
+  --gold3:#8B6914;
+  --bg:#0A0A08;
+  --bg2:#111109;
+  --bg3:#181714;
+  --bg4:#1E1D19;
+  --text:#EDE9DE;
+  --muted:#7A7669;
+  --muted2:#A09A8A;
+  --line:rgba(196,150,42,0.15);
+  --linew:rgba(255,255,255,0.06);
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Outfit',sans-serif;
+  font-weight:300;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem 5vw;
+  background:rgba(10,10,8,0.88);
+  backdrop-filter:blur(16px);
+  border-bottom:0.5px solid var(--line);
+  transition:padding .3s;
+}
+.nav-brand{
+  display:flex;flex-direction:column;line-height:1.1;
+  text-decoration:none;
+}
+.nav-brand-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;font-weight:400;
+  color:var(--text);letter-spacing:0.05em;
+}
+.nav-brand-sub{
+  font-size:0.6rem;letter-spacing:0.22em;
+  text-transform:uppercase;color:var(--gold);
+}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center}
+.nav-links a{
+  color:var(--muted);text-decoration:none;
+  font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{
+  padding:.55rem 1.4rem;
+  border:0.5px solid var(--gold3);
+  color:var(--gold)!important;
+  transition:all .2s!important;
+}
+.nav-cta:hover{background:var(--gold)!important;color:var(--bg)!important;border-color:var(--gold)!important}
+.hamburger{display:none;flex-direction:column;gap:6px;cursor:pointer;padding:4px}
+.hamburger span{width:22px;height:1px;background:var(--gold);display:block;transition:.3s}
+
+/* ─── HERO ─── */
+#hero{
+  min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;
+  padding:7rem 5vw 5rem;
+  max-width:1300px;margin:0 auto;
+  gap:4rem;
+}
+.hero-left{position:relative}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:2rem;
+}
+.hero-tag::before{content:'';width:32px;height:1px;background:var(--gold);display:block}
+.hero-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.2rem,5.5vw,6rem);
+  font-weight:300;line-height:1.0;
+  color:var(--text);margin-bottom:.4rem;
+}
+.hero-brand{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.5rem,2.5vw,2.6rem);
+  font-weight:300;font-style:italic;
+  color:var(--gold);letter-spacing:0.02em;
+  margin-bottom:2rem;
+}
+.hero-desc{
+  color:var(--muted2);font-size:1rem;
+  max-width:480px;margin-bottom:2.5rem;
+  line-height:1.8;
+}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.btn-gold{
+  padding:.8rem 2rem;
+  background:var(--gold);color:var(--bg);
+  font-family:'Outfit',sans-serif;font-size:.78rem;
+  font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:background .2s,transform .15s;display:inline-block;
+}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-1px)}
+.btn-ghost{
+  padding:.8rem 2rem;background:transparent;
+  color:var(--muted2);font-family:'Outfit',sans-serif;
+  font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;border:0.5px solid var(--linew);
+  transition:all .2s;display:inline-block;
+}
+.btn-ghost:hover{border-color:var(--gold3);color:var(--gold)}
+
+.hero-right{
+  position:relative;display:flex;
+  align-items:flex-end;justify-content:center;
+}
+.hero-photo-wrap{
+  width:100%;max-width:420px;aspect-ratio:3/4;
+  background:var(--bg3);
+  border:0.5px solid var(--line);
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:1rem;color:var(--gold3);
+}
+.hero-photo-wrap::after{
+  content:'';position:absolute;
+  bottom:0;left:0;right:0;height:40%;
+  background:linear-gradient(to top, var(--bg3), transparent);
+}
+.hero-photo-placeholder{
+  font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;
+  opacity:.5;
+}
+.hero-photo-icon{opacity:.3}
+
+.hero-stats{
+  position:absolute;bottom:-1px;left:-1px;right:-1px;
+  display:grid;grid-template-columns:1fr 1fr;
+  border-top:0.5px solid var(--line);
+  background:rgba(10,10,8,0.9);
+  backdrop-filter:blur(8px);
+  z-index:2;
+}
+.hero-stat{
+  padding:1rem 1.25rem;
+  border-right:0.5px solid var(--line);
+}
+.hero-stat:nth-child(even){border-right:none}
+.hero-stat-n{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.8rem;font-weight:400;
+  color:var(--gold);line-height:1;
+}
+.hero-stat-l{
+  font-size:.6rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);
+  margin-top:.2rem;
+}
+
+.hero-scroll{
+  position:absolute;bottom:2rem;left:5vw;
+  display:flex;align-items:center;gap:.75rem;
+  font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);
+}
+.hero-scroll-line{
+  width:48px;height:1px;
+  background:linear-gradient(to right,var(--gold3),transparent);
+}
+
+/* ─── CREDENCIALES STRIP ─── */
+.strip{
+  background:var(--bg2);
+  border-top:0.5px solid var(--linew);border-bottom:0.5px solid var(--linew);
+  padding:1.75rem 5vw;
+  display:flex;align-items:center;gap:2rem;overflow:hidden;
+}
+.strip-label{
+  font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold3);white-space:nowrap;flex-shrink:0;
+}
+.strip-divider{width:1px;height:1.5rem;background:var(--line);flex-shrink:0}
+.strip-items{
+  display:flex;gap:2.5rem;align-items:center;flex-wrap:wrap;
+}
+.strip-item{
+  font-size:.75rem;letter-spacing:.05em;color:var(--muted2);
+  white-space:nowrap;
+}
+.strip-item strong{color:var(--text);font-weight:400}
+
+/* ─── ABOUT ─── */
+#about{
+  padding:9rem 5vw;
+  max-width:1200px;margin:0 auto;
+}
+.about-grid{
+  display:grid;grid-template-columns:5fr 4fr;
+  gap:6rem;align-items:start;
+}
+.section-kicker{
+  font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.5rem;
+  display:flex;align-items:center;gap:.75rem;
+}
+.section-kicker::before{content:'';width:24px;height:1px;background:var(--gold)}
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.2rem,3.5vw,3.8rem);
+  font-weight:300;line-height:1.15;
+  color:var(--text);margin-bottom:2rem;
+}
+.section-title em{font-style:italic;color:var(--gold)}
+.about-body p{
+  color:var(--muted2);font-size:.95rem;line-height:1.85;
+  margin-bottom:1.25rem;
+}
+.about-body strong{color:var(--text);font-weight:400}
+.about-body p:last-child{margin-bottom:0}
+
+.about-sidebar{}
+.timeline{list-style:none;position:relative;padding-left:1.5rem}
+.timeline::before{
+  content:'';position:absolute;left:0;top:.5rem;bottom:.5rem;
+  width:1px;background:var(--line);
+}
+.timeline li{
+  position:relative;margin-bottom:2rem;
+}
+.timeline li::before{
+  content:'';position:absolute;left:-1.5rem;top:.45rem;
+  width:5px;height:5px;
+  border:1px solid var(--gold);
+  transform:rotate(45deg);background:var(--bg);
+}
+.tl-year{
+  font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold3);margin-bottom:.3rem;
+}
+.tl-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;color:var(--text);font-weight:400;
+}
+.tl-desc{font-size:.8rem;color:var(--muted);line-height:1.6;margin-top:.2rem}
+
+/* ─── PROPÓSITO ─── */
+.proposito{
+  background:var(--bg2);
+  border-top:0.5px solid var(--linew);border-bottom:0.5px solid var(--linew);
+  padding:7rem 5vw;text-align:center;
+}
+.proposito-inner{max-width:780px;margin:0 auto}
+.proposito-quote{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-weight:300;
+  font-size:clamp(1.6rem,3vw,2.6rem);
+  line-height:1.5;color:var(--text);
+  margin-bottom:2rem;
+}
+.proposito-quote span{color:var(--gold)}
+.proposito-attr{
+  font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold3);
+}
+.proposito-values{
+  display:flex;justify-content:center;gap:0;
+  margin-top:4rem;
+  border:0.5px solid var(--line);
+  max-width:600px;margin-left:auto;margin-right:auto;
+}
+.value-item{
+  flex:1;padding:1.5rem 1rem;text-align:center;
+  border-right:0.5px solid var(--line);
+}
+.value-item:last-child{border-right:none}
+.value-n{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.1rem;color:var(--gold);
+  display:block;margin-bottom:.4rem;
+}
+.value-l{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+/* ─── SERVICIOS ─── */
+#servicios{padding:9rem 5vw;max-width:1200px;margin:0 auto}
+.services-header{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:4rem;align-items:end;margin-bottom:5rem;
+}
+.services-intro{
+  color:var(--muted2);font-size:.95rem;line-height:1.8;
+}
+.services-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:var(--line);border:0.5px solid var(--line);
+}
+.svc{
+  background:var(--bg);padding:2.5rem;
+  transition:background .3s;
+  text-decoration:none;color:inherit;display:block;
+}
+.svc:hover{background:var(--bg3)}
+.svc-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3rem;font-weight:300;color:var(--line);
+  line-height:1;margin-bottom:1.5rem;
+  transition:color .3s;
+}
+.svc:hover .svc-num{color:var(--gold3)}
+.svc-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.5rem;font-weight:400;color:var(--text);
+  margin-bottom:.75rem;
+}
+.svc-desc{color:var(--muted2);font-size:.85rem;line-height:1.75}
+.svc-tags{
+  display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem;
+}
+.svc-tag{
+  font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
+  padding:.3rem .7rem;border:0.5px solid var(--line);
+  color:var(--muted);
+}
+.svc-arrow{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold3);margin-top:1.75rem;
+  transition:gap .2s,color .2s;
+}
+.svc:hover .svc-arrow{gap:.8rem;color:var(--gold)}
+
+/* ─── PONENCIAS ─── */
+.ponencias{
+  padding:7rem 5vw;
+  background:var(--bg2);
+  border-top:0.5px solid var(--linew);border-bottom:0.5px solid var(--linew);
+}
+.ponencias-inner{max-width:1200px;margin:0 auto}
+.ponencias-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;margin-top:4rem;
+}
+.pon-card{
+  background:var(--bg3);
+  border:0.5px solid var(--line);
+  padding:2rem;
+}
+.pon-icon{
+  width:40px;height:40px;
+  border:0.5px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gold);margin-bottom:1.25rem;
+}
+.pon-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.1rem;color:var(--text);margin-bottom:.5rem;font-weight:400;
+}
+.pon-desc{font-size:.82rem;color:var(--muted);line-height:1.7}
+
+/* ─── CONTACTO ─── */
+#contacto{
+  padding:9rem 5vw;
+  max-width:1000px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:6rem;align-items:center;
+}
+.contact-left .section-title{margin-bottom:1.25rem}
+.contact-desc{color:var(--muted2);font-size:.95rem;line-height:1.8;margin-bottom:2.5rem}
+.contact-email{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.4rem;color:var(--gold);
+  text-decoration:none;
+  border-bottom:0.5px solid var(--gold3);
+  padding-bottom:3px;
+  transition:border-color .2s;
+  display:inline-block;
+}
+.contact-email:hover{border-color:var(--gold)}
+.social-grid{display:flex;flex-direction:column;gap:.75rem}
+.social-link{
+  display:flex;align-items:center;gap:1rem;
+  padding:1rem 1.25rem;
+  border:0.5px solid var(--linew);
+  text-decoration:none;color:var(--muted2);
+  font-size:.82rem;letter-spacing:.04em;
+  transition:all .2s;
+}
+.social-link:hover{border-color:var(--line);color:var(--gold);background:var(--bg3)}
+.social-link svg{flex-shrink:0;opacity:.6}
+.social-link:hover svg{opacity:1}
+.social-name{font-weight:400;color:var(--text);font-size:.78rem;margin-left:auto;letter-spacing:.12em;text-transform:uppercase;font-size:.62rem;color:var(--muted)}
+
+/* ─── FOOTER ─── */
+footer{
+  border-top:0.5px solid var(--linew);
+  padding:2.5rem 5vw;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;
+}
+.footer-brand{
+  font-family:'Cormorant Garamond',serif;
+  color:var(--gold3);font-size:.95rem;letter-spacing:.03em;
+}
+.footer-right{
+  display:flex;align-items:center;gap:2rem;
+}
+.footer-copy{font-size:.7rem;color:var(--muted);letter-spacing:.06em}
+.footer-links{display:flex;gap:1.5rem;list-style:none}
+.footer-links a{font-size:.68rem;color:var(--muted);text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
+.footer-links a:hover{color:var(--gold)}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fade{opacity:0}
+.fade.in{animation:fadeUp .75s ease forwards}
+
+/* ─── MOBILE ─── */
+@media(max-width:900px){
+  #hero{grid-template-columns:1fr;min-height:auto;padding-top:7rem}
+  .hero-right{order:-1;max-width:320px;margin:0 auto}
+  .hero-photo-wrap{aspect-ratio:1/1}
+  .about-grid,.services-header,#contacto{grid-template-columns:1fr;gap:3rem}
+  .services-grid{grid-template-columns:1fr}
+  .ponencias-grid{grid-template-columns:1fr}
+  .proposito-values{flex-wrap:wrap}
+  .value-item{flex:1 1 40%}
+  .nav-links{
+    display:none;flex-direction:column;
+    position:fixed;top:0;left:0;right:0;bottom:0;
+    background:var(--bg);justify-content:center;align-items:center;
+    gap:2rem;padding:2rem;z-index:150;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:1rem}
+  .hamburger{display:flex}
+  .strip-items{gap:1.5rem}
+  .strip{flex-wrap:wrap}
+  footer{flex-direction:column;align-items:flex-start}
+  .footer-right{flex-direction:column;align-items:flex-start;gap:.75rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">
+    <span class="nav-brand-name">Alejandro Palomar</span>
+    <span class="nav-brand-sub">Capitalista Rebelde</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">Quién soy</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="mailto:capitalistarebelde@gmail.com" class="nav-cta">Reservar sesión</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <p class="hero-tag fade">Fundador · Inversor · Speaker</p>
+    <h1 class="hero-name fade">Alejandro<br>Palomar</h1>
+    <p class="hero-brand fade">Capitalista Rebelde</p>
+    <p class="hero-desc fade">Licenciado en Derecho y ADE. Más de una década en el ecosistema crypto y Web3. Con 29 años gestionaba $450M. Hoy ayudo a individuos y emprendedores a alcanzar su soberanía financiera real.</p>
+    <div class="hero-actions fade">
+      <a href="#servicios" class="btn-gold">Ver cómo trabajo</a>
+      <a href="#about" class="btn-ghost">Mi historia</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-wrap">
+      <svg class="hero-photo-icon" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8">
+        <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+      </svg>
+      <span class="hero-photo-placeholder">Tu foto aquí</span>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-n">$450M</div>
+          <div class="hero-stat-l">Gestionado a los 29</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-n">+10</div>
+          <div class="hero-stat-l">Años en crypto</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-n">2016</div>
+          <div class="hero-stat-l">Co-inversión VC</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-n">BCN→PTY</div>
+          <div class="hero-stat-l">Base en Panamá</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS STRIP -->
+<div class="strip">
+  <span class="strip-label">Colaboraciones</span>
+  <div class="strip-divider"></div>
+  <div class="strip-items">
+    <span class="strip-item"><strong>DASI</strong> Digital Assets Institute</span>
+    <span class="strip-item"><strong>Zignaly</strong> Investments</span>
+    <span class="strip-item"><strong>Pantera Capital</strong> co-inversión</span>
+    <span class="strip-item"><strong>Blockchain Capital</strong></span>
+    <span class="strip-item"><strong>EFPA España</strong> ponente</span>
+    <span class="strip-item"><strong>Cámara Blockchain</strong> España</span>
+    <span class="strip-item"><strong>U. Rey Juan Carlos</strong></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-content">
+      <p class="section-kicker fade">Mi historia</p>
+      <h2 class="section-title fade">Una trayectoria<br>construida en<br><em>libertad</em></h2>
+      <div class="about-body fade">
+        <p>Soy <strong>doble licenciado en Administración y Dirección de Empresas y Derecho</strong>, con más de una década de experiencia en el cruce entre finanzas tradicionales y el nuevo ecosistema digital.</p>
+        <p>Con tan solo 29 años gestionaba una <strong>cartera de inversión de $450 millones</strong>. Esa experiencia me dio acceso a las respuestas que cambian vidas: los patrones que siguen quienes acumulan riqueza generacional de verdad.</p>
+        <p>Lo que escuché me llevó a <strong>renunciar a un trabajo que muchos soñarían</strong> y apostar por blockchain y Web3 cuando nadie lo hacía. Desde 2016 he co-invertido junto a los mejores Venture Capital del sector —Pantera Capital, Blockchain Capital— y he ayudado a construir parte del ecosistema descentralizado.</p>
+        <p>Hoy, desde Panamá, <strong>ayudo a personas y emprendedores a construir su propia soberanía financiera</strong> con las herramientas del siglo XXI: crypto, Web3, estructuras legales internacionales y estrategias fiscales globales.</p>
+        <p><strong>Integridad y transparencia</strong> son nuestra razón de ser.</p>
+      </div>
+    </div>
+    <div class="about-sidebar fade">
+      <ul class="timeline">
+        <li>
+          <div class="tl-year">Antes de 2014</div>
+          <div class="tl-title">Banca privada</div>
+          <div class="tl-desc">Gestión de $450M en carteras de inversión con 29 años. Formación de banqueros privados en Europa.</div>
+        </li>
+        <li>
+          <div class="tl-year">2016</div>
+          <div class="tl-title">Salto a Blockchain</div>
+          <div class="tl-desc">Co-inversión con Pantera Capital y Blockchain Capital. Inicio del ecosistema descentralizado.</div>
+        </li>
+        <li>
+          <div class="tl-year">2018</div>
+          <div class="tl-title">Exchange Colombia & Panamá</div>
+          <div class="tl-desc">Creación de exchange propio. Gestor del segundo fondo crypto regulado en Malta.</div>
+        </li>
+        <li>
+          <div class="tl-year">2020–2022</div>
+          <div class="tl-title">DASI & Zignaly</div>
+          <div class="tl-desc">Digital Assets Institute. Soluciones DLT para empresas y gobiernos. Conferencias internacionales.</div>
+        </li>
+        <li>
+          <div class="tl-year">Hoy</div>
+          <div class="tl-title">Capitalista Rebelde</div>
+          <div class="tl-desc">Consultoría de soberanía financiera personal. Basado en Panamá. Comunidad en español.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROPÓSITO -->
+<div class="proposito">
+  <div class="proposito-inner">
+    <p class="proposito-quote fade">"Quiero contagiar a más personas de este entusiasmo y ayudarles a que, como yo, alcancen su <span>soberanía financiera</span> y protejan su patrimonio de los Estados sobre-endeudados."</p>
+    <p class="proposito-attr fade">— Alejandro Palomar · Fundador de Capitalista Rebelde</p>
+    <div class="proposito-values fade">
+      <div class="value-item">
+        <span class="value-n">Libertad</span>
+        <span class="value-l">Financiera & personal</span>
+      </div>
+      <div class="value-item">
+        <span class="value-n">Soberanía</span>
+        <span class="value-l">Tu dinero, tus reglas</span>
+      </div>
+      <div class="value-item">
+        <span class="value-n">Integridad</span>
+        <span class="value-l">Razón de ser</span>
+      </div>
+      <div class="value-item">
+        <span class="value-n">Acción</span>
+        <span class="value-l">Mejora continua</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="services-header">
+    <div>
+      <p class="section-kicker fade">Cómo puedo ayudarte</p>
+      <h2 class="section-title fade">Servicios<br><em>a medida</em></h2>
+    </div>
+    <p class="services-intro fade">Con el dinero de la familia no se juega. Cada sesión parte de tu situación real para construir una estrategia concreta, no genérica.</p>
+  </div>
+  <div class="services-grid">
+    <a href="mailto:capitalistarebelde@gmail.com" class="svc">
+      <div class="svc-num">01</div>
+      <h3 class="svc-title">Consultoría personalizada</h3>
+      <p class="svc-desc">Sesiones 1:1 para construir tu estrategia de soberanía financiera y digital. Desde cero o desde donde estás ahora.</p>
+      <div class="svc-tags">
+        <span class="svc-tag">Diagnóstico</span>
+        <span class="svc-tag">Estrategia</span>
+        <span class="svc-tag">Ejecución</span>
+      </div>
+      <span class="svc-arrow">Reservar sesión →</span>
+    </a>
+    <a href="mailto:capitalistarebelde@gmail.com" class="svc">
+      <div class="svc-num">02</div>
+      <h3 class="svc-title">Inversión en crypto y Web3</h3>
+      <p class="svc-desc">Estrategias de inversión en activos digitales con rigor, gestión del riesgo y co-inversión con los mejores fondos del sector.</p>
+      <div class="svc-tags">
+        <span class="svc-tag">Bitcoin</span>
+        <span class="svc-tag">DeFi</span>
+        <span class="svc-tag">VC Access</span>
+      </div>
+      <span class="svc-arrow">Conocer más →</span>
+    </a>
+    <a href="mailto:capitalistarebelde@gmail.com" class="svc">
+      <div class="svc-num">03</div>
+      <h3 class="svc-title">Globalización y desbancarización</h3>
+      <p class="svc-desc">Residencias fiscales, cuentas bancarias internacionales, creación de sociedades y estrategias de segunda nacionalidad.</p>
+      <div class="svc-tags">
+        <span class="svc-tag">Residencias</span>
+        <span class="svc-tag">Sociedades</span>
+        <span class="svc-tag">Bancos globales</span>
+      </div>
+      <span class="svc-arrow">Consultar →</span>
+    </a>
+    <a href="mailto:capitalistarebelde@gmail.com" class="svc">
+      <div class="svc-num">04</div>
+      <h3 class="svc-title">Identidad digital Web3</h3>
+      <p class="svc-desc">Gestiona de forma segura y privada tus activos digitales. Construye tu identidad soberana en la nueva internet del valor.</p>
+      <div class="svc-tags">
+        <span class="svc-tag">Wallets</span>
+        <span class="svc-tag">Privacidad</span>
+        <span class="svc-tag">Seguridad</span>
+      </div>
+      <span class="svc-arrow">Empezar →</span>
+    </a>
+  </div>
+</section>
+
+<!-- PONENCIAS -->
+<div class="ponencias">
+  <div class="ponencias-inner">
+    <p class="section-kicker fade">Presencia internacional</p>
+    <h2 class="section-title fade">Ponente y formador<br><em>global</em></h2>
+    <div class="ponencias-grid">
+      <div class="pon-card fade">
+        <div class="pon-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <h3 class="pon-title">Universidades</h3>
+        <p class="pon-desc">Formación en Universidad Rey Juan Carlos y otras universidades europeas. Cursos especializados para banqueros privados.</p>
+      </div>
+      <div class="pon-card fade">
+        <div class="pon-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3 class="pon-title">Congresos internacionales</h3>
+        <p class="pon-desc">Blockchain Summit Latam, EFPA España y múltiples conferencias en Europa y Latinoamérica sobre crypto y Web3.</p>
+      </div>
+      <div class="pon-card fade">
+        <div class="pon-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3 class="pon-title">Gobiernos e instituciones</h3>
+        <p class="pon-desc">Proyectos de soluciones DLT para gobiernos e instituciones internacionales. Asesoría en tokenización y blockchain público.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="contact-left">
+    <p class="section-kicker fade">Hablemos</p>
+    <h2 class="section-title fade">¿Listo para<br>tu <em>soberanía</em>?</h2>
+    <p class="contact-desc fade">Cuéntame tu situación. La primera conversación es para entender dónde estás y hacia dónde quieres ir.</p>
+    <a href="mailto:capitalistarebelde@gmail.com" class="contact-email fade">capitalistarebelde@gmail.com</a>
+  </div>
+  <div class="social-grid fade">
+    <a href="https://www.youtube.com/@capitalistarebelde" target="_blank" rel="noopener" class="social-link">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.95C18.88 4 12 4 12 4s-6.88 0-8.6.47a2.78 2.78 0 0 0-1.94 1.95A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 1.95C5.12 20 12 20 12 20s6.88 0 8.6-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+      YouTube — Capitalista Rebelde
+      <span class="social-name">Canal</span>
+    </a>
+    <a href="https://twitter.com/APalomar_EA" target="_blank" rel="noopener" class="social-link">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4l16 16M4 20L20 4"/></svg>
+      @APalomar_EA en Twitter / X
+      <span class="social-name">Twitter</span>
+    </a>
+    <a href="https://linktr.ee/apalomar" target="_blank" rel="noopener" class="social-link">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      Todos los links — Linktree
+      <span class="social-name">Links</span>
+    </a>
+    <a href="https://pa.linkedin.com/company/capitalista-rebelde" target="_blank" rel="noopener" class="social-link">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      Capitalista Rebelde en LinkedIn
+      <span class="social-name">LinkedIn</span>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-brand">Alejandro Palomar · Capitalista Rebelde</span>
+  <div class="footer-right">
+    <ul class="footer-links">
+      <li><a href="#about">Quién soy</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="mailto:capitalistarebelde@gmail.com">Contacto</a></li>
+    </ul>
+    <span class="footer-copy">© 2025 · Equilibrio, Inspiración e Inversión</span>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  const spans = hamburger.querySelectorAll('span');
+  if (navLinks.classList.contains('open')) {
+    spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+    spans[1].style.opacity = '0';
+    spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+  } else {
+    spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+  }
+});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  hamburger.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+}));
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      const siblings = e.target.parentElement.querySelectorAll('.fade');
+      let delay = 0;
+      siblings.forEach((el, idx) => { if (el === e.target) delay = idx * 80; });
+      setTimeout(() => e.target.classList.add('in'), Math.min(delay, 300));
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
